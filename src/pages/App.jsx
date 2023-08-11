@@ -11,15 +11,20 @@ import imgDarkMode from "../img/avatar.jpg"
 import imgLigthMode from "../img/avatar2.jpg"
 
 const App = () => {
-  const [isLigthMode,setIsLigthMode] = useState(false);
+  const [isLigthMode,setIsLigthMode] = useState(true);
+
+  const toggleMode = () =>{
+    setIsLigthMode((prevMode) => ! prevMode)
+  };
 
 const imgSrc = isLigthMode ? imgLigthMode :imgDarkMode;
 const imgAlt = isLigthMode ? "Imagem no modo Claro" : "Imagem no modo escuro";
   
 return(
+  <div id="App" className={isLigthMode? "ligth" : ""}>
     <div id="container">
       <Profile imgSrc={imgSrc} imgAlt={imgAlt}>@rrrfaele</Profile>
-      <Switch></Switch>
+      <Switch mode={toggleMode} infoButton={isLigthMode}/>
       <div id="links">
         <ul>
           <Links link={"https://github.com"}>GitHub</Links>
@@ -38,6 +43,7 @@ return(
 
       </div>
       <Footer link={"#"}>rrrfaele</Footer>
+    </div>
     </div>
   );
 };

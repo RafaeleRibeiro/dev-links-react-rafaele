@@ -2,6 +2,7 @@ import { useState } from "react";
 import Profile from "../components/profile/profile";
 import Switch from "../components/switch/switch";
 import Links from "../components/links/links";
+import Social from "../components/socialLinks/socialLinks";
 
 import "./App.css";
 
@@ -27,6 +28,13 @@ return(
 
           
         </ul>
+      </div>
+      <div id="socialLinks">
+        <Social href={"#"} icon ={"logo-github"}/>
+        <Social href={"#"} icon ={"logo-instagram"}/>
+        <Social href={"#"} icon ={"logo-tiktok"}/>
+        <Social href={"#"} icon ={"logo-twitter"}/>
+
       </div>
     </div>
   );
